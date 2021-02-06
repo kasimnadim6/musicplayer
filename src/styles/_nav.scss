@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 10vh;
+  transition: all 0.5s ease;
+  .nav-header {
+    font-weight: 400;
+  }
+  .btn-library {
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    border: 2px solid rgb(65, 65, 65);
+    padding: 0.5rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    &:hover {
+      background: rgb(65, 65, 65);
+      color: white;
+      transform: translateY(-2px);
+    }
+    &:active,
+    &:visited {
+      transform: translateY(0);
+    }
+  }
+}
+.slid {
+  transform: translateX(15%);
+}

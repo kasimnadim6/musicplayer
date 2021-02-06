@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 20vh;
+  transition: all 0.5s ease;
   .time-control {
     width: 50%;
     display: flex;
@@ -11,7 +12,8 @@
     justify-content: space-between;
     input {
       width: 100%;
-      padding: 1rem 2rem;
+      padding: 1rem 0rem;
+      cursor: pointer;
     }
     p {
       padding: 1rem;
@@ -25,6 +27,13 @@
     width: 30%;
     svg {
       cursor: pointer;
+      color: #777;
+      &:hover {
+        color: black;
+      }
     }
   }
+}
+.slid {
+  transform: translateX(15%);
 }

@@ -1,11 +1,17 @@
-import React from 'react';
+import React from "react";
 
-const Song = () => {
-    return (
-        <div className="song-container">
-            <h1>song</h1>
-        </div>
-    )
-}
+const Song = ({ libraryStatus, currentSong }) => {
+  return (
+    <div className={`song-container ${libraryStatus ? "slid" : ""}`}>
+      <img
+        className='cover'
+        alt={currentSong.name}
+        src={currentSong.cover}
+      ></img>
+      <h2 className='song-name'>{currentSong.name}</h2>
+      <h3 className='song-artist'>{currentSong.artist}</h3>
+    </div>
+  );
+};
 
 export default Song;

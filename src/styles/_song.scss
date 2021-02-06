@@ -1,6 +1,24 @@
 .song-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  min-height: 60vh;
+  padding: 2rem;
+  transition: all 0.5s ease;
+  .cover {
+    width: 12rem;
+    border-radius: 50%;
+  }
+  .song-name {
+    padding: 2rem 1rem 1rem 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .song-artist {
+    font-weight: 300;
+  }
+}
+.slid {
+  transform: translateX(15%);
 }
