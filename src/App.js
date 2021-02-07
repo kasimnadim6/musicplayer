@@ -3,7 +3,7 @@ import "./styles/app.scss";
 import Nav from "./component/Nav";
 import Song from "./component/Song";
 import Player from "./component/Player";
-import data from "./util";
+import data from "./data";
 import Library from "./component/Library";
 
 function App() {
@@ -16,13 +16,18 @@ function App() {
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
+    animationPercentage: 0,
   });
   const [libraryStatus, setLibraryStatus] = useState(false);
   //Handlers
   const timeUpdateHandler = (e) => {
     const currentTime = e.target.currentTime;
     const duration = e.target.duration;
-    setSongInfo({ ...songInfo, currentTime, duration });
+    //calculate percentage
+    const roundCurrentTime = Math.round(currentTime);
+    const roundDuration = Math.round(duration);
+    const animationPercentage = (roundCurrentTime / roundDuration) * 100;
+    setSongInfo({ ...songInfo, currentTime, duration, animationPercentage });
   };
   return (
     <div className='app'>
@@ -31,6 +36,10 @@ function App() {
       <Player
         audioRef={audioRef}
         libraryStatus={libraryStatus}
+        songs={songs}
+        setSongs={setSongs}
+        currentSong={currentSong}
+        setCurrentSong={setCurrentSong}
         songInfo={songInfo}
         setSongInfo={setSongInfo}
         isSongPlaying={isSongPlaying}

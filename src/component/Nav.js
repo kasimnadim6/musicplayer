@@ -11,7 +11,7 @@ const Nav = ({ libraryStatus, setLibraryStatus }) => {
         onClick={() => setLibraryStatus(!libraryStatus)}
       >
         Library
-        <FontAwesomeIcon icon={faMusic} />
+        <FontAwesomeIcon className='icon-music' icon={faMusic} />
       </button>
     </nav>
   );
