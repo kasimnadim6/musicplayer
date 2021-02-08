@@ -53,3 +53,9 @@
   transform: translateX(500px);
   opacity: 1;
 }
+
+@media screen and (max-width: 600px) {
+  .library {
+    width: 100%;
+  }
+}

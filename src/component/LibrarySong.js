@@ -1,5 +1,4 @@
 import React from "react";
-import { playAudio } from "../util";
 
 const LibrarySong = ({
   audioRef,
@@ -15,8 +14,8 @@ const LibrarySong = ({
   }
 
   //Event Handlers
-  const songSelectHandler = (e) => {
-    setCurrentSong(song);
+  const songSelectHandler = async () => {
+    await setCurrentSong(song);
     //Add active state
     const newSongs = songs.map((s) => {
       if (s.id === song.id) {
@@ -27,7 +26,7 @@ const LibrarySong = ({
     });
     setSongs(newSongs);
     //check if the song is playing
-    playAudio(isSongPlaying, audioRef);
+    if (isSongPlaying) audioRef.current.play();
   };
   return (
     <div className={classNames.join(" ")} onClick={songSelectHandler}>
